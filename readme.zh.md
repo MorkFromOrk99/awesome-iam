@@ -31,46 +31,49 @@
 
 <!-- mdformat-toc start --slug=github --no-anchors --maxlevel=6 --minlevel=2 -->
 
-- [概述](#概述)
-- [安全](#安全)
-- [账户管理](#账户管理)
-- [密码学](#密码学)
-  - [标识符](#标识符)
-- [零信任网络](#零信任网络)
-- [认证](#认证)
-  - [基于密码](#基于密码)
-  - [无密码](#无密码)
-  - [安全密钥](#安全密钥)
-  - [多因素](#多因素)
-  - [基于短信](#基于短信)
-  - [公钥基础设施](#公钥基础设施)
+- [Contents](#contents)
+- [概述](#%E6%A6%82%E8%BF%B0)
+- [安全](#%E5%AE%89%E5%85%A8)
+- [账户管理](#%E8%B4%A6%E6%88%B7%E7%AE%A1%E7%90%86)
+- [密码学](#%E5%AF%86%E7%A0%81%E5%AD%A6)
+  - [标识符](#%E6%A0%87%E8%AF%86%E7%AC%A6)
+- [零信任网络](#%E9%9B%B6%E4%BF%A1%E4%BB%BB%E7%BD%91%E7%BB%9C)
+- [认证](#%E8%AE%A4%E8%AF%81)
+  - [基于密码](#%E5%9F%BA%E4%BA%8E%E5%AF%86%E7%A0%81)
+  - [无密码](#%E6%97%A0%E5%AF%86%E7%A0%81)
+  - [安全密钥](#%E5%AE%89%E5%85%A8%E5%AF%86%E9%92%A5)
+  - [多因素](#%E5%A4%9A%E5%9B%A0%E7%B4%A0)
+  - [基于短信](#%E5%9F%BA%E4%BA%8E%E7%9F%AD%E4%BF%A1)
+  - [公钥基础设施](#%E5%85%AC%E9%92%A5%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD)
   - [JWT](#jwt)
   - [OAuth2 & OpenID](#oauth2--openid)
   - [SAML](#saml)
-- [授权](#授权)
-  - [策略模型](#策略模型)
-  - [开源策略框架](#开源策略框架)
-  - [AWS 策略工具](#AWS-策略工具)
+- [授权](#%E6%8E%88%E6%9D%83)
+  - [策略模型](#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%9E%8B)
+  - [开源策略框架](#%E5%BC%80%E6%BA%90%E7%AD%96%E7%95%A5%E6%A1%86%E6%9E%B6)
+  - [AWS 策略工具](#aws-%E7%AD%96%E7%95%A5%E5%B7%A5%E5%85%B7)
   - [Macaroons](#macaroons)
-- [秘密管理](#秘密管理)
-  - [硬件安全模块 (HSM)](#硬件安全模块-hsm)
-- [信任与安全](#信任与安全)
-  - [用户身份](#用户身份)
-  - [欺诈](#欺诈)
+- [秘密管理](#%E7%A7%98%E5%AF%86%E7%AE%A1%E7%90%86)
+  - [硬件安全模块 (HSM)](#%E7%A1%AC%E4%BB%B6%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9D%97-hsm)
+- [信任与安全](#%E4%BF%A1%E4%BB%BB%E4%B8%8E%E5%AE%89%E5%85%A8)
+  - [用户身份](#%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD)
+  - [欺诈](#%E6%AC%BA%E8%AF%88)
   - [Moderation](#moderation)
-  - [威胁情报](#威胁情报)
-  - [验证码](#验证码)
-- [黑名单](#黑名单)
-  - [主机名和子域](#主机名和子域)
-  - [邮件](#邮件)
-  - [保留的 ID](#保留的-ID)
-  - [诽谤](#诽谤)
-- [隐私](#隐私)
-  - [匿名化](#匿名化)
+  - [威胁情报](#%E5%A8%81%E8%83%81%E6%83%85%E6%8A%A5)
+  - [验证码](#%E9%AA%8C%E8%AF%81%E7%A0%81)
+- [黑名单](#%E9%BB%91%E5%90%8D%E5%8D%95)
+  - [主机名和子域](#%E4%B8%BB%E6%9C%BA%E5%90%8D%E5%92%8C%E5%AD%90%E5%9F%9F)
+  - [邮件](#%E9%82%AE%E4%BB%B6)
+  - [保留的 ID](#%E4%BF%9D%E7%95%99%E7%9A%84-id)
+  - [诽谤](#%E8%AF%BD%E8%B0%A4)
+- [隐私](#%E9%9A%90%E7%A7%81)
+  - [匿名化](#%E5%8C%BF%E5%90%8D%E5%8C%96)
   - [GDPR](#gdpr)
 - [UX/UI](#uxui)
-- [竞争分析](#竞争分析)
-- [历史](#历史)
+- [竞争分析](#%E7%AB%9E%E4%BA%89%E5%88%86%E6%9E%90)
+- [历史](#%E5%8E%86%E5%8F%B2)
+- [贡献](#%E8%B4%A1%E7%8C%AE)
+- [Footnotes](#footnotes)
 
 <!-- mdformat-toc end -->
 
@@ -152,7 +155,6 @@ IAM 的基础：用户、组、角色和权限的定义和生命周期。
 
 - [BeyondCorp：企业安全的新方法](https://www.usenix.org/system/files/login/articles/login_dec14_02_ward.pdf) - 简要概述谷歌的零信任网络方案。
 
-
 - [什么是 BeyondCorp？ 什么是身份感知代理？](https://medium.com/google-cloud/what-is-beyondcorp-what-is-identity-aware-proxy-de525d9b3f90) - 越来越多的公司添加了额外的 VPN、防火墙、限制和限制层，导致糟糕的体验和轻微的安全增益。是存在更好的方法。
 
 - [oathkeeper](https://github.com/ory/oathkeeper) - 身份与访问代理和访问控制决策API，对进入的HTTP请求进行认证、授权和变异。受BeyondCorp / Zero Trust白皮书的启发。
@@ -169,8 +171,8 @@ IAM 的基础：用户、组、角色和权限的定义和生命周期。
 
 - [服务间认证方案的儿童花园](https://web.archive.org/web/20200507173734/https://latacora.micro.blog/a-childs-garden/) - 与上述精神相同，但这次是在服务层面。
 
-- [在 Facebook 扩展后端身份验证](https://www.youtube.com/watch?v=kY-Bkv3qxMc) - 
-简而言之，如何做：1.小的信任根；2.TLS 是不够的；3.基于证书的令牌；4.加密认证令牌（CATs）。更多细节见[幻灯片](https://rwc.iacr.org/2018/Slides/Lewi.pdf)。
+- [在 Facebook 扩展后端身份验证](https://www.youtube.com/watch?v=kY-Bkv3qxMc) -
+  简而言之，如何做：1.小的信任根；2.TLS 是不够的；3.基于证书的令牌；4.加密认证令牌（CATs）。更多细节见[幻灯片](https://rwc.iacr.org/2018/Slides/Lewi.pdf)。
 
 ### 基于密码
 
@@ -518,7 +520,7 @@ HSM 是在硬件层面保证秘密管理安全的物理设备。
 
 ### 用户身份
 
-大多数企业不会收集客户的身份信息来创建用户档案以出售给第三方，不会。但你仍然必须这样做：当地法律要求在 ["了解你的客户" (Know You Customer KYC)] 的大旗下跟踪合同关系。
+大多数企业不会收集客户的身份信息来创建用户档案以出售给第三方，不会。但你仍然必须这样做：当地法律要求在 \["了解你的客户" (Know You Customer KYC)\] 的大旗下跟踪合同关系。
 
 - [身份法则](https://www.identityblog.com/stories/2005/05/13/TheLawsOfIdentity.pdf) - 虽然本文的目标是身份元系统，但它的法则在较小的范围内仍然提供了很好的见解，特别是第一条法则：总是允许用户控制并征求同意以赢得信任。
 
